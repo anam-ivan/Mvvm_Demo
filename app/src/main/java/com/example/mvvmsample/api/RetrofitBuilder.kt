@@ -32,7 +32,7 @@ object RetrofitBuilder {
             .addInterceptor(httpLoggingInterceptor())
             .addNetworkInterceptor(NetworkInterceptor())
             .addInterceptor(OfflineInterceptor())
-            .addInterceptor(AuthInterceptor(MyApplication.instance))
+            .addInterceptor(AuthInterceptor(MyApplication.instance.applicationContext))
 
 
     private fun getRetrofit(): Retrofit {
@@ -84,7 +84,6 @@ object RetrofitBuilder {
                     .cacheControl(cacheControl)
                     .build();
             }
-
             return chain.proceed(request)
         }
     }

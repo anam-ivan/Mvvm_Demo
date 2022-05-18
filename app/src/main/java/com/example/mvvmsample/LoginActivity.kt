@@ -1,5 +1,6 @@
 package com.example.mvvmsample
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -8,14 +9,17 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.mvvmsample.api.ApiHelper
 import com.example.mvvmsample.api.RetrofitBuilder
 import com.example.mvvmsample.model.RequestBodies
+import com.example.mvvmsample.utils.SessionManager
 import com.example.mvvmsample.utils.Status
 import com.example.mvvmsample.viewmodel.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var viewModel: LoginViewModel
+    private lateinit var sessionManager : SessionManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        sessionManager = SessionManager(this)
         setupViewModel()
         setupObservers()
     }
@@ -44,6 +48,10 @@ class LoginActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()*/
                             Toast.makeText(this, it.body()?.token, Toast.LENGTH_LONG).show()
+                            it.body()?.token?.let { it1 -> sessionManager.saveAuthToken(it1) }
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         }
                     }
                     Status.ERROR -> {
