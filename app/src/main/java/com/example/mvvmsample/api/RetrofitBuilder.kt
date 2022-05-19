@@ -18,7 +18,8 @@ import java.util.concurrent.TimeUnit
 object RetrofitBuilder {
     // private const val BASE_URL = "https://catalog.chaldal.com/"
     // private const val BASE_URL = "https://howtodoandroid.com/"
-    private const val BASE_URL = "https://reqres.in/"
+    // private const val BASE_URL = "https://reqres.in/"
+    private const val BASE_URL = "http://restapi.adequateshop.com/api/"
 
     // Caching data from online
     var cacheSize: Long = 5 * 1024 * 1024;
@@ -67,7 +68,7 @@ object RetrofitBuilder {
                 .removeHeader(HEADER_PRAGMA)
                 .removeHeader(HEADER_CACHE_CONTROL)
                 .header(HEADER_CACHE_CONTROL, cacheControl.toString())
-                .build();
+                .build()
         }
     }
 
