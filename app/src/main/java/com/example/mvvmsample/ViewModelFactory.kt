@@ -12,6 +12,7 @@ import java.lang.IllegalArgumentException
 /**
  *Created by tarikul on 5/9/20
  */
+@Suppress("UNCHECKED_CAST")
 class ViewModelFactory(private val apiHelper: ApiHelper) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MovieViewModel::class.java)) {

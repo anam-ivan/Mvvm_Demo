@@ -13,4 +13,5 @@
     <color name="product_price_color">#34AAAB</color>
     <color name="divider_color">#D0D3DC</color>
     <color name="divider_color_dark">#A1A7B7</color>
+    <color name="transparent">#00000000</color>
 </resources>

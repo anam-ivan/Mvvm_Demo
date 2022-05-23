@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:bind="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data>
+    <!--<data>
 
         <variable
             name="movie"
             type="com.example.mvvmsample.model.Movie" />
 
-    </data>
+    </data>-->
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -54,7 +50,6 @@
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:padding="5dp"
-                android:text="@{movie.name}"
                 android:textColor="@color/product_text_color"
                 android:textSize="20sp" />
 
@@ -64,7 +59,6 @@
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
                 android:padding="5dp"
-                android:text="@{movie.category}"
                 android:textColor="#707070"
                 android:textSize="16sp" />
 
@@ -79,7 +73,6 @@
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
                     android:padding="5dp"
-                    android:text="@{movie.desc}"
                     android:textColor="@color/product_price_color"
                     android:textSize="20sp" />
 
